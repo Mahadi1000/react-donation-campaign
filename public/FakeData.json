@@ -1,0 +1,134 @@
+[
+  {
+    "id": 1,
+    "picture": "https://i.ibb.co/cD4wby5/Rectangle-4284.png",
+    "title": "Health",
+    "category": "Category A",
+    "category_bg": "#FF5733",
+    "card_bg": "#E6E6E6",
+    "text_bg": "#333",
+    "description": "Clean water for children",
+    "price": 50.00
+  },
+  {
+    "id": 2,
+    "picture": "https://i.ibb.co/ysN7YT1/Rectangle-4288.png",
+    "title": "Education",
+    "category": "Category B",
+    "category_bg": "#FFC300",
+    "card_bg": "#0052ff;",
+    "text_bg": "#0052FF",
+    "description": "Good education",
+    "price": 45.00
+  },
+  {
+    "id": 3,
+    "picture": "https://i.ibb.co/1Lk1XW6/Rectangle-4287.png",
+    "title": "Clothing",
+    "category": "Category A",
+    "category_bg": "#FF5733",
+    "card_bg": "#E6E6E6",
+    "text_bg": "#79C23F26",
+    "description": "Used Clothing Drive",
+    "price": 55.00
+  },
+  {
+    "id": 4,
+    "picture": "https://i.ibb.co/0y0LNYm/Rectangle-4287-2.png",
+    "title": "Food",
+    "category": "Category C",
+    "category_bg": "#00A86B",
+    "card_bg": "#D9D9D9",
+    "text_bg": "#555",
+    "description": "Better Food for Everyone",
+    "price": 60.00
+  },
+  {
+    "id": 5,
+    "picture": "https://i.ibb.co/0y0LNYm/Rectangle-4287-2.png",
+    "title": "Food",
+    "category": "Category B",
+    "category_bg": "#FFC300",
+    "card_bg": "#F0F0F0",
+    "text_bg": "#444",
+    "description": "Better Food for Everyone",
+    "price": 40.00
+  },
+  {
+    "id": 6,
+    "picture": "https://i.ibb.co/1Lk1XW6/Rectangle-4287.png",
+    "title": "Item 6",
+    "category": "Category A",
+    "category_bg": "#FF5733",
+    "card_bg": "#E6E6E6",
+    "text_bg": "#333",
+    "description": "Description for Item 6",
+    "price": 70.00
+  },
+  {
+    "id": 7,
+    "picture": "https://i.ibb.co/ysN7YT1/Rectangle-4288.png",
+    "title": "Item 7",
+    "category": "Category C",
+    "category_bg": "#00A86B",
+    "card_bg": "#D9D9D9",
+    "text_bg": "#555",
+    "description": "Description for Item 7",
+    "price": 35.00
+  },
+  {
+    "id": 8,
+    "picture": "https://i.ibb.co/cD4wby5/Rectangle-4284.png",
+    "title": "Item 8",
+    "category": "Category A",
+    "category_bg": "#FF5733",
+    "card_bg": "#E6E6E6",
+    "text_bg": "#333",
+    "description": "Description for Item 8",
+    "price": 65.00
+  },
+  {
+    "id": 9,
+    "picture": "https://i.ibb.co/cD4wby5/Rectangle-4284.png",
+    "title": "Item 9",
+    "category": "Category B",
+    "category_bg": "#FFC300",
+    "card_bg": "#F0F0F0",
+    "text_bg": "#444",
+    "description": "Description for Item 9",
+    "price": 75.00
+  },
+  {
+    "id": 10,
+    "picture": "https://i.ibb.co/ysN7YT1/Rectangle-4288.png",
+    "title": "Item 10",
+    "category": "Category C",
+    "category_bg": "#00A86B",
+    "card_bg": "#D9D9D9",
+    "text_bg": "#555",
+    "description": "Description for Item 10",
+    "price": 55.00
+  },
+  {
+    "id": 11,
+    "picture": "https://i.ibb.co/1Lk1XW6/Rectangle-4287.png",
+    "title": "Item 11",
+    "category": "Category A",
+    "category_bg": "#FF5733",
+    "card_bg": "#E6E6E6",
+    "text_bg": "#333",
+    "description": "Description for Item 11",
+    "price": 80.00
+  },
+  {
+    "id": 12,
+    "picture": "https://i.ibb.co/0y0LNYm/Rectangle-4287-2.png",
+    "title": "Item 12",
+    "category": "Category B",
+    "category_bg": "#FFC300",
+    "card_bg": "#F0F0F0",
+    "text_bg": "#444",
+    "description": "Description for Item 12",
+    "price": 45.00
+  }
+]
