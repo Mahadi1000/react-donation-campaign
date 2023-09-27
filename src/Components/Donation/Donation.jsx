@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { getDonationApplications } from "../../Utitlity/LocalStorage";
+import Statistics from "../Statistics/Statistics";
 
 export default function Donation() {
   const donations = useLoaderData();
@@ -57,7 +58,7 @@ export default function Donation() {
   };
 
   return (
-    <div className="mt-20">
+    <div className="mt-20 ">
       <h1 className="ml-4 text-3xl">Total Prices: ${totalPrices}</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {displayedDonations.map((donation) => (
@@ -88,7 +89,6 @@ export default function Donation() {
           </div>
         ))}
       </div>
-
       {appliedDonations.length > 4 && !showAll && (
         <button
           className="bg-green-600 text-white px-5 py-3 rounded-lg mt-4 mx-auto block"
@@ -97,6 +97,8 @@ export default function Donation() {
           See All
         </button>
       )}
+      
     </div>
   );
+    
 }

@@ -1,22 +1,44 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
-import { useEffect, useState } from "react";
-
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Home() {
   const [contents, setContents] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [sortedContents, setSortedContents] = useState([]);
 
   const navigate = useNavigate();
+
   useEffect(() => {
     fetch("FakeData.json")
       .then((res) => res.json())
-      .then((data) => setContents(data));
+      .then((data) => {
+        setContents(data);
+        setSortedContents([...data]);
+      });
   }, []);
 
   const handleCardClick = (id) => {
     navigate(`/donationsDetails/${id}`);
   };
+
+  const handleInputChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  useEffect(() => {
+    // Filter and sort the contents based on the search term and name
+    const filteredContents = contents.filter((card) =>
+      card.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    filteredContents.sort((a, b) => {
+      return a.title.localeCompare(b.title);
+    });
+
+    setSortedContents(filteredContents);
+  }, [searchTerm, contents]);
 
   return (
     <div>
@@ -37,8 +59,9 @@ export default function Home() {
               <div className="flex items-center">
                 <input
                   type="text"
-                  className="mt-4 p-2 border border-gray-300  w-80 h-12 rounded-l-lg"
+                  className="mt-4 p-2 border border-gray-300  w-80 h-12 rounded-l-lg text-black"
                   placeholder="Enter something"
+                  onChange={handleInputChange}
                 />
                 <button className="bg-rose-500 h-12 mt-4 px-3 rounded-r-lg font-semibold hover:bg-rose-800">
                   Search
@@ -54,7 +77,7 @@ export default function Home() {
           <div className="container mx-auto mt-8">
             <h2 className="text-2xl font-semibold mb-4">Featured Donations</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-              {contents.map((card) => (
+              {sortedContents.map((card) => (
                 <div
                   key={card.id}
                   className={`p-4 rounded-lg shadow-lg cursor-pointer transition-transform transform hover:scale-105 text-center bg-${card.card_bg} text-${card.text_bg}`}
@@ -73,9 +96,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Render the DonationPage component */}
     </div>
   );
 }
-

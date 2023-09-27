@@ -1,34 +1,43 @@
-import React, { useEffect, useRef } from "react";
-import { Pie } from "react-chartjs-2";
 
-const Statistics = () => {
-  const chartRef = useRef(null);
+import { PieChart, Pie, Cell, Tooltip } from "recharts";
 
-  useEffect(() => {
-    if (chartRef.current) {
-      // Destroy the previous chart instance if it exists
-      chartRef.current.chartInstance.destroy();
-    }
-  }, []);
+export default function Statistics({ totalPrices }) {
+  const totalDonation = 4; // Replace with your total donation value
 
-  const data = {
-    // Your chart data here
-  };
+  const data = [
+    { name: "Total Donation", value: totalDonation },
+    { name: "Total Prices", value: totalPrices },
+  ];
 
-  const options = {
-    // Your chart options here
-  };
+  // Calculate the percentage of total prices relative to total donations
+  const percentage = (totalPrices / totalDonation) * 100;
 
   return (
-    <div className="mt-20">
-      <h1 className="text-3xl font-semibold text-center mb-4">
-        Donation Statistics
-      </h1>
-      <div className="w-80 mx-auto">
-        <Pie ref={chartRef} data={data} options={options} />
-      </div>
+    <div className="mt-24 w-1/4 mx-auto">
+      <h2>Donations Statistics</h2>
+      <PieChart width={400} height={400}>
+        <Pie
+          dataKey="value"
+          isAnimationActive={false}
+          data={data}
+          cx="50%"
+          cy="50%"
+          outerRadius={80}
+          fill="#8884d8"
+          label
+        >
+          {data.map((entry, index) => (
+            <Cell
+              key={`cell-${index}`}
+              fill={`#${index !== 0 ? "82ca9d" : "8884d8"}`}
+            />
+          ))}
+        </Pie>
+        <Tooltip />
+      </PieChart>
+      <p>
+        Total Prices as a Percentage of Total Donation: {percentage.toFixed(2)}%
+      </p>
     </div>
   );
-};
-
-export default Statistics;
+}
